@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html data-ng-app="checklist">
+  <head>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.js"></script>
+  </head>
+  <body ng-controller="checklistController as check">
+
+    <div id="parent">
+      <div id="cats">
+        <p id="catsText">Categories</p>
+      </div>
+      <div id="list">
+        <p>{{check.header.name}}</p>
+      </div>
+    </div>
+
+    <div id="child">
+      <div>
+        <table id="allCats">
+          <tr ng-repeat-start="category in check.categs">
+              <td ng-class="{ selected: tab.isSet(category) }">
+                <a href id="tabs" ng-click="check.setTab(category)">
+                  {{category.name}}
+                </a>
+              </td>
+          </tr>
+          <tr ng-repeat-end ng-if="$last">
+            <td>
+              <form id="addCategory" ng-submit="check.catSubmit(newCat)">
+                <input type="text" ng-model="newCat" name="newCat">
+                <button type="submit">+</button>
+              </form>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="addTask">
+        <form id="taskAdd" ng-submit="check.taskSubmit(task,check.header)">
+          <label>To Do:   <input type="text" ng-model="task"
+                                 name="task"></label>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="todo" ng-repeat="category in check.categs" ng-show="check.isSet(category)">
+      <div>
+        <form ng-repeat="task in category.toDo" ng-click="check.completeTask(task,category)">
+          <input id="tsk" type="checkbox" name="aTask">{{task}}<br>
+        </form>
+      </div>
+    </div>
+
+    <div id="comp" ng-repeat="category in check.categs" ng-show="check.isSet(category)">
+      <div>
+        <h3 id="compTxt">Completed:</h3>
+        <p id="compTask" ng-repeat="taska in category.completed">
+          <strike>{{taska}}</strike>
+        </p>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

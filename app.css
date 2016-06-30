@@ -1,0 +1,119 @@
+
+#parent div {
+  border: 1px solid black;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: none;
+}
+
+#cats {
+  float: left;
+  width: 200px;
+  background-color: lightblue;
+  border-right: none;
+}
+
+#cats p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#list {
+  float: right;
+  width: calc(100% - 200px);
+  height: 100%;
+  background-color: chartreuse;
+}
+
+#list p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#allCats {
+  float: left;
+  width: 200px;
+  background-color: lightblue;
+  font-weight: bold;
+  font-size: 150%;
+  table-layout: fixed;
+}
+
+#allCats td {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+#addTask {
+  border: 1px solid black;
+  float: right;
+  height: 52px;
+  width: calc(100% - 200px);
+  background-color: chartreuse;
+  text-align: center;
+  display: table;
+}
+
+#addTask form {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#addCategory input {
+  text-align: center;
+  background-color: lightblue;
+  width: 50%;
+  border: 2px solid black;
+}
+
+#tabs {
+  text-decoration: none;
+  color: black;
+  display: block;
+  width: 100%;
+}
+
+#tabs:hover {
+  background-color: yellow;
+}
+
+.selected {
+  color: white;
+}
+
+#tsk {
+  margin-right: 10px;
+}
+
+#todo, #comp {
+  float: right;
+  width: calc(100% - 200px);
+  text-align: center;
+}
+
+#todo {
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+#compTxt {
+  color: darkred;
+  text-align: center;
+}
+
+#compTask {
+  font-size: 25px;
+}
+
+
+
+
+
+
+
